@@ -113,7 +113,7 @@
                     <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false"
                         aria-controls="ui-basic">
                         <span class="menu-icon">
-                            <i class="mdi mdi-laptop"></i>
+                            <i class="mdi mdi-music-box-outline"></i>
                         </span>
                         <span class="menu-title">Gerencia Eventos</span>
                         <i class="menu-arrow"></i>
@@ -133,7 +133,15 @@
                 <li class="nav-item menu-items">
                     <a class="nav-link" href="pages/forms/basic_elements.html">
                         <span class="menu-icon">
-                            <i class="mdi mdi-playlist-play"></i>
+                            <i class="mdi mdi-ticket-confirmation"></i>
+                        </span>
+                        <span class="menu-title">Ingressos</span>
+                    </a>
+                </li>
+                <li class="nav-item menu-items">
+                    <a class="nav-link" href="pages/forms/basic_elements.html">
+                        <span class="menu-icon">
+                            <i class="mdi mdi-home-map-marker"></i>
                         </span>
                         <span class="menu-title">Locais Cadastrados</span>
                     </a>
@@ -141,41 +149,14 @@
                 <li class="nav-item menu-items">
                     <a class="nav-link" href="pages/tables/basic-table.html">
                         <span class="menu-icon">
-                            <i class="mdi mdi-table-large"></i>
+                            <i class="mdi mdi-map-marker-multiple"></i>
                         </span>
                         <span class="menu-title">Reservas</span>
-                    </a>
-                </li>
-                <li class="nav-item menu-items">
-                    <a class="nav-link" href="pages/charts/chartjs.html">
-                        <span class="menu-icon">
-                            <i class="mdi mdi-chart-bar"></i>
-                        </span>
-                        <span class="menu-title">Charts</span>
-                    </a>
-                </li>
-                <li class="nav-item menu-items">
-                    <a class="nav-link" href="pages/icons/mdi.html">
-                        <span class="menu-icon">
-                            <i class="mdi mdi-contacts"></i>
-                        </span>
-                        <span class="menu-title">Icons</span>
-                    </a>
-                </li>
-
-                <li class="nav-item menu-items">
-                    <a class="nav-link"
-                        href="http://www.bootstrapdash.com/demo/corona-free/jquery/documentation/documentation.html">
-                        <span class="menu-icon">
-                            <i class="mdi mdi-file-document-box"></i>
-                        </span>
-                        <span class="menu-title">Documentation</span>
                     </a>
                 </li>
             </ul>
         </nav>
         <div class="container-fluid page-body-wrapper">
-            <!-- partial:partials/_navbar.html -->
             <nav class="navbar p-0 fixed-top d-flex flex-row">
                 <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
                     <a class="navbar-brand brand-logo-mini" href="index.html"><img

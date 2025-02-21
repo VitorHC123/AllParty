@@ -45,5 +45,13 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
+
     Route::get('/admin', [AdminController::class, 'show'])->name('admin.dashboard');
+
+    Route::get('/account-management', function () {
+        return view('admin.accountManagement.index');
+    });
+    
+
+
 });
