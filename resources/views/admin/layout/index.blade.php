@@ -39,10 +39,10 @@
                             </div>
                             <div class="profile-name">
                                 <h5 class="mb-0 font-weight-normal">
-                                    {{ $user->name ?? 'Usuário não autenticado' }}
+                                    {{ Auth::user()->name ?? 'Usuário não autenticado' }}
                                 </h5>
                                 <span>
-                                    {{ $role->nome ?? 'Papel não atribuído' }}
+                                    {{ Auth::user()->role->nome ?? 'Papel não atribuído' }}
                                 </span>
                             </div>
                         </div>
@@ -99,16 +99,17 @@
                     </a>
                     <div class="collapse" id="auth">
                         <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href="pages/samples/blank-page.html"> Contas Cadastradas </a>
+                            <li class="nav-item"> <a class="nav-link" href="/account-management"> Editar Cadastros
+                                </a>
                             </li>
-                            <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> Alterar Senhas </a>
-                            </li>
-                            <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> Permissões </a>
+
+                            <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> Permissões
+                                </a>
                             </li>
                         </ul>
                     </div>
                 </li>
-               
+
                 <li class="nav-item menu-items">
                     <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false"
                         aria-controls="ui-basic">
@@ -123,8 +124,8 @@
                             <li class="nav-item"> <a class="nav-link"
                                     href="pages/ui-features/buttons.html">Cadastrar</a>
                             </li>
-                            <li class="nav-item"> <a class="nav-link"
-                                    href="pages/ui-features/dropdowns.html"> Editar/Excluir</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">
+                                    Editar/Excluir</a></li>
                             <li class="nav-item"> <a class="nav-link"
                                     href="pages/ui-features/typography.html">Status</a></li>
                         </ul>
@@ -331,8 +332,13 @@
                 </div>
             </nav>
 
-
-            @yield('index')
+            @if (Auth::check())
+                @yield('index')
+            @else
+                <div class="main-panel">
+                    <div class="content-wrapper">
+                    </div>
+            @endif
 
 
             <footer class="footer">
@@ -359,6 +365,9 @@
     <script src="assets_admin/js/settings.js"></script>
     <script src="assets_admin/js/todolist.js"></script>
     <script src="assets_admin/js/dashboard.js"></script>
+
+
+
 
 </body>
 

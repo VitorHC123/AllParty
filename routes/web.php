@@ -30,6 +30,7 @@ Route::get('/event-details', function () {
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Account\AccountManagementController;
 
 Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('register', [RegisterController::class, 'register']);
@@ -44,14 +45,16 @@ Route::middleware('auth')->group(function () {
     });
 });
 
+// Em web.php
+
 Route::middleware(['auth', 'admin'])->group(function () {
 
     Route::get('/admin', [AdminController::class, 'show'])->name('admin.dashboard');
 
-    Route::get('/account-management', function () {
-        return view('admin.accountManagement.index');
-    });
-    
-
+    Route::get('/account-management', [AccountManagementController::class, 'show_accounts'])->name('admin.accountManagement.index'); 
+    Route::get('/edit-users', [AccountManagementController::class, 'editScreen']);
+    Route::get('/admin/accounts/{id}/edit', [AccountManagementController::class, 'editUser'])->name('admin.accountManagement.edit');
+    Route::put('/admin/accounts/update', [AccountManagementController::class, 'updateUser'])->name('admin.accountManagement.update');
+    Route::delete('/admin/accounts/{id}', [AccountManagementController::class, 'deleteUser'])->name('admin.accountManagement.delete');
 
 });

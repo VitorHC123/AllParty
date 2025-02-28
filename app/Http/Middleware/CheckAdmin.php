@@ -11,6 +11,7 @@ class CheckAdmin
     {
         if (Auth::check() && Auth::user()->role && Auth::user()->role->nome == 'Admin') {
             return $next($request); 
+            
         }
 
         return redirect('/');

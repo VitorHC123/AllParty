@@ -28,6 +28,7 @@ class LoginController extends Controller
             } else {
                 return redirect('/');
             }
+           
         }
 
         return redirect('/login')->withErrors([

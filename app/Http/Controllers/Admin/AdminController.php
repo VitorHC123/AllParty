@@ -21,7 +21,7 @@ class AdminController extends Controller
     {
         $user = Auth::user();
         $role = $user ? $user->role : null;
-
+        
         return view('admin.index.index', compact('user', 'role'));
     }
 
